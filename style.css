@@ -1,23 +1,36 @@
 body {
-  background: linear-gradient(to right, rgb(242, 238, 6), rgb(203, 18, 18));
+  background: url('./img/scenery.webp');
+  background-attachment: fixed;
+  background-size: cover;
   color: white;
   margin: 0;
-  font-family: rubik;
+  font-family: sans-serif;
 }
 
 .container {
   padding: 30px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-h1 {
-  text-align: center;
-  font-size: 54px;
+.container #img-head {
+  max-width: 500px;
+}
+
+.container-cards {
+  background-color: rgba(182, 182, 182, 0.37);
+  backdrop-filter: blur(5px);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.459);
+  padding: 30px;
+  width: 85%;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
 .pokedex {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   padding-inline-start: 0;
 }
@@ -29,6 +42,7 @@ h1 {
   text-align: center;
   border-radius: 20px;
   position: relative;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.459);
 }
 
 .card::after {
@@ -37,8 +51,8 @@ h1 {
   width: 50%;
   height: 45%;
   border-radius: 100%;
-  background-color: #fff;
-  opacity: 0.7;
+  background-color: rgb(0, 0, 0);
+  /* opacity: 0.7; */
   position: absolute;
   top: 15%;
   left: 25%;
@@ -49,60 +63,74 @@ h1 {
 }
 
 .fire {
-  background-color: #fddfdf;
+  background: linear-gradient(to bottom, #ff0000,#ffa600);
+  color: rgb(139, 10, 10);
 }
 
 .grass {
-  background-color: #defde0;
+  background: linear-gradient(to bottom, rgb(0, 202, 17),#aaffb5);
+  color:rgb(0, 109, 9)
 }
 
 .electric {
-  background-color: #fcf7de;
+  background: linear-gradient(to bottom, rgb(255, 196, 0),#ffef97);
+  color:rgb(146, 123, 19);
 }
 
 .water,
 .ice {
-  background-color: #def3fd;
+  background: linear-gradient(to bottom, rgb(2, 200, 235),#a1fff7);
+  color:rgb(13, 106, 143);
 }
 
 .ground {
-  background-color: #f4e7da;
+  background: linear-gradient(to bottom, rgb(99, 46, 11),#b67f5b);
+  color:rgb(95, 45, 11);
 }
 
 .rock {
-  background-color: #d5d5d4;
+  background: linear-gradient(to bottom, rgb(58, 52, 49),#797776);
+  color:rgb(0, 0, 0);
 }
 
 .fairy {
-  background-color: #fceaff;
+  background: linear-gradient(to bottom, rgb(150, 51, 231),#de9ff7);
+  color:rgb(60, 3, 124);
 }
 
 .poison {
-  background-color: #98d7a5;
+  background: linear-gradient(to bottom, rgb(105, 51, 231),#b79ff7);
+  color:rgb(29, 3, 124);
 }
 
 .bug {
-  background-color: #f8d5a3;
+  background: linear-gradient(to bottom, rgb(167, 223, 13),#e2ffbd);
+  color:rgb(96, 112, 3);
 }
 
 .dragon {
-  background-color: #97b3e6;
+  background: linear-gradient(to bottom, rgb(2, 103, 255),#60daff);
+  color:rgb(0, 58, 134);
 }
 
 .psychic {
-  background-color: #eaeda1;
+  background: linear-gradient(to bottom, rgb(0, 194, 152),#a1ffe3);
+  color:rgb(0, 109, 76);
 }
 
 .flying {
-  background-color: #f5f5f5;
+  background: linear-gradient(to bottom, rgb(0, 116, 194),#addaff);
+  color:rgb(3, 50, 95);
 }
 
 .fighting {
-  background-color: #e6e0d4;
+  background: linear-gradient(to bottom, rgb(255, 195, 83),#ffedd6);
+  color:rgb(87, 53, 2);
 }
 
 .normal {
-  background-color: #f5f5f5;
+  background: linear-gradient(to bottom, rgb(134, 134, 134),#d4d4d4);
+  color:rgb(68, 68, 68);
 }
 
 .card:hover {
@@ -119,8 +147,9 @@ h1 {
 }
 
 .card-subtitle {
-  margin-top: 5px;
-  color: #666;
+  margin-top: 15px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
   font-weight: lighter;
   position: relative;
   z-index: 2;
@@ -136,12 +165,15 @@ h1 {
   20% {
     transform: translateY(-6px);
   }
+
   40% {
     transform: translateY(0px);
   }
+
   80% {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
+
   100% {
     transform: translateY(0);
   }
